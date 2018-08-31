@@ -12,11 +12,6 @@ typedef struct{
 void InitList(SqList *L)
 {
   L->length = 0;
-  for(int i= 0;i < MAXSIZE;i++)
-  {
-    L->data[i] = (Elemtype)i;
-    L->length++;
-  }
   printf("length is %d\n",L->length);
 }
 
@@ -36,7 +31,6 @@ bool ListInsert(SqList *L,int i,Elemtype e)
 bool ListDelete(SqList *L,int i,Elemtype *e)
 {
   if(i < 1 || i > L->length) return false; //the scope of i needs to be suitable.
-  if(L->length <= 0) return false; //the length can't less than one.
   *e = L->data[i-1];
   for(int j = i;j < L->length;j++)
   {
@@ -67,7 +61,11 @@ int main(int argc,int *argv[])
   SqList L;
   int e;
   InitList(&L);
-  ListShow(&L);
+  for(int i = 0;i < MAXSIZE;i++)
+  {
+    L.data[i] = i;
+    L.length++;
+  }
   if(ListDelete(&L,10,&e)) ListShow(&L);
   printf("The delete data is %d\n",e);
   if(ListInsert(&L,5,155)) ListShow(&L);
