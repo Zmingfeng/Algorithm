@@ -77,16 +77,16 @@ int main(int argc,int *argv[])
   SqList L;
   int e;
   InitList(&L);
-  for(int i= 0;i < L->MAXSize;i++)
+  for(int i= 0;i < L.MAXSize;i++)
   { 
-    L->data[i] = (Elemtype)i;
-    L->length++;
+    L.data[i] = (Elemtype)i;
+    L.length++;
   }
   ListShow(&L);
   if(ListInsert(&L,5,155)) ListShow(&L);
   if(ListDelete(&L,10,&e)) ListShow(&L);
   printf("The delete data is %d\n",e);
-  if(e = ListSearch(&L,15)) printf("the first 15 in L is %d",e);
-  else printf("can't find 15 in L!");
+  if(e = ListSearch(&L,15)) printf("the first 15 in L is %d\n",e);
+  else printf("can't find 15 in L!\n");
   return 0;
 }
