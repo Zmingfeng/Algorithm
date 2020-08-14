@@ -9,9 +9,8 @@ int romanToInt(string s) {
     map<char, int> RomanToInteger{
         {'I', 1}, {'V', 5}, {'X', 10}, {'L', 50}, {'C', 100}, {'D', 500}, {'M', 1000}
     };
-    cout << s[2] << endl;
     for (int i = 0; i < s.length() - 1; ++i){
-        RomanToInteger[s[i+1]] < RomanToInteger[s[i]] ? output_number += RomanToInteger[s[i]] : output_number -= RomanToInteger[s[i]];
+        RomanToInteger[s[i+1]] > RomanToInteger[s[i]] ? output_number -= RomanToInteger[s[i]] : output_number += RomanToInteger[s[i]];
     }
     output_number += RomanToInteger[s[s.length() -1]];
     return output_number;
