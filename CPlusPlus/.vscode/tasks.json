@@ -5,7 +5,7 @@
         {
             "type": "shell",
             "label": "C/C++: g++.exe build active file",
-            "command": "E:\\MinGW64\\bin\\g++.exe",
+            "command": "${env:MinGW64}\\g++.exe",
             "args": [
                 "-g",
                 "${file}",
