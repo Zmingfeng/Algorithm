@@ -30,10 +30,10 @@ int main() {
                 else ret.back()[1] = points[i][1] - tempSplitLen;
             }
             else {
-                if(points[next][0] > points[0][0]) {
-                    ret.back()[0] = points[0][0] + tempSplitLen;
+                if(points[next][0] > points[i][0]) {
+                    ret.back()[0] = points[i][0] + tempSplitLen;
                 }
-                else ret.back()[0] = points[0][0] - tempSplitLen;                
+                else ret.back()[0] = points[i][0] - tempSplitLen;                
             }
 
             diff -= splitLen;
